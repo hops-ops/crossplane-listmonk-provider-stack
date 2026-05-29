@@ -1,11 +1,11 @@
 SHELL := /bin/bash
 
-PACKAGE ?= crossplane-listmonk-provider
-XRD_DIR := apis/crossplanelistmonkproviders
+PACKAGE ?= crossplane-listmonk-provider-stack
+XRD_DIR := apis/listmonkproviderstacks
 COMPOSITION := $(XRD_DIR)/composition.yaml
 DEFINITION := $(XRD_DIR)/definition.yaml
 CONFIGURATION := $(XRD_DIR)/configuration.yaml
-EXAMPLE_DEFAULT := examples/crossplanelistmonkproviders/minimal.yaml
+EXAMPLE_DEFAULT := examples/listmonkproviderstacks/minimal.yaml
 RENDER_TESTS := $(wildcard tests/test-*)
 E2E_TESTS := $(wildcard tests/e2etest-*)
 
@@ -22,8 +22,8 @@ generate-configuration:
 	hops validate generate-configuration --path . --api-path "$(XRD_DIR)"
 
 EXAMPLES := \
-    examples/crossplanelistmonkproviders/minimal.yaml:: \
-    examples/crossplanelistmonkproviders/full.yaml::
+    examples/listmonkproviderstacks/minimal.yaml:: \
+    examples/listmonkproviderstacks/full.yaml::
 
 render\:all:
 	@tmpdir=$$(mktemp -d); \
@@ -92,11 +92,11 @@ render: ; @$(MAKE) 'render:all'
 validate: ; @$(MAKE) generate-configuration 'validate:all'
 
 render\:%:
-	@example="examples/crossplanelistmonkproviders/$*.yaml"; \
+	@example="examples/listmonkproviderstacks/$*.yaml"; \
 	up composition render --xrd=$(DEFINITION) $(COMPOSITION) $$example
 
 validate\:%: generate-configuration
-	@example="examples/crossplanelistmonkproviders/$*.yaml"; \
+	@example="examples/listmonkproviderstacks/$*.yaml"; \
 	up composition render --xrd=$(DEFINITION) $(COMPOSITION) $$example \
 		--include-full-xr --quiet | \
 		crossplane beta validate $(CONFIGURATION),$(XRD_DIR) --error-on-missing-schemas -

@@ -1,4 +1,4 @@
-# crossplane-listmonk-provider
+# crossplane-listmonk-provider-stack
 
 Installs hops-ops/provider-listmonk and optionally composes its Secret-backed ProviderConfig.
 
@@ -12,7 +12,7 @@ resources, and ProviderConfig can be reconciled independently.
 
 ### Stage 1: Getting Started
 
-Apply the minimal example in `examples/crossplanelistmonkproviders/minimal.yaml` after
+Apply the minimal example in `examples/listmonkproviderstacks/minimal.yaml` after
 the target cluster already has Crossplane core installed.
 
 ### Stage 2: Growing

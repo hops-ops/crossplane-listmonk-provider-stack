@@ -1,7 +1,7 @@
 import models.io.upbound.dev.meta.v1alpha1 as metav1alpha1
 
-_composition = "apis/crossplanelistmonkproviders/composition.yaml"
-_xrd = "apis/crossplanelistmonkproviders/definition.yaml"
+_composition = "apis/listmonkproviderstacks/composition.yaml"
+_xrd = "apis/listmonkproviderstacks/definition.yaml"
 
 _items = [
     metav1alpha1.CompositionTest {
@@ -12,8 +12,8 @@ _items = [
             timeoutSeconds = 60
             validate = False
             xr = {
-                apiVersion = "hops.ops.com.ai/v1alpha1"
-                kind = "CrossplaneListmonkProvider"
+                apiVersion = "crossplane.ops.com.ai/v1alpha1"
+                kind = "ListmonkProviderStack"
                 metadata.name = "listmonk"
                 spec = {
                     clusterName = "my-cluster"
@@ -56,8 +56,8 @@ _items = [
             timeoutSeconds = 60
             validate = False
             xr = {
-                apiVersion = "hops.ops.com.ai/v1alpha1"
-                kind = "CrossplaneListmonkProvider"
+                apiVersion = "crossplane.ops.com.ai/v1alpha1"
+                kind = "ListmonkProviderStack"
                 metadata.name = "listmonk"
                 spec = {
                     clusterName = "my-cluster"
@@ -87,8 +87,8 @@ _items = [
             timeoutSeconds = 60
             validate = False
             xr = {
-                apiVersion = "hops.ops.com.ai/v1alpha1"
-                kind = "CrossplaneListmonkProvider"
+                apiVersion = "crossplane.ops.com.ai/v1alpha1"
+                kind = "ListmonkProviderStack"
                 metadata.name = "listmonk"
                 spec = {
                     clusterName = "my-cluster"

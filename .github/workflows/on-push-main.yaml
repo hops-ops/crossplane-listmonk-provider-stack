@@ -25,10 +25,10 @@ jobs:
     with:
       examples: |
         [
-          { "example": "examples/crossplanelistmonkproviders/minimal.yaml" },
-          { "example": "examples/crossplanelistmonkproviders/full.yaml" }
+          { "example": "examples/listmonkproviderstacks/minimal.yaml" },
+          { "example": "examples/listmonkproviderstacks/full.yaml" }
         ]
-      api_path: apis/crossplanelistmonkproviders
+      api_path: apis/listmonkproviderstacks
       error_on_missing_schemas: true
 
   test:

@@ -1,15 +1,15 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: crossplanelistmonkproviders.hops.ops.com.ai
+  name: listmonkproviderstacks.crossplane.ops.com.ai
 spec:
   compositeTypeRef:
-    apiVersion: hops.ops.com.ai/v1alpha1
-    kind: CrossplaneListmonkProvider
+    apiVersion: crossplane.ops.com.ai/v1alpha1
+    kind: ListmonkProviderStack
   mode: Pipeline
   pipeline:
   - functionRef:
-      name: hops-ops-crossplane-listmonk-providerrender
+      name: hops-ops-crossplane-listmonk-provider-stackrender
     step: render
   - functionRef:
       name: crossplane-contrib-function-auto-ready
